@@ -20,6 +20,9 @@ $config = [
         ],
         'settings' => [
             'class' => 'rkit\settings\Settings',
+            //'cache' => '…', // cache component name
+            //'tableName' => '…' // table name
+            //'cacheName' => '…' // a key identifying the values to be cached
         ]
     ]
 ];

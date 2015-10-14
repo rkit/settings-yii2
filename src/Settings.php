@@ -18,11 +18,11 @@ use yii\db\Query;
 class Settings extends \yii\base\Component
 {
     /**
-     * @var string $tableName
+     * @var string $tableName Table name
      */
     public $tableName = 'settings';
     /**
-     * @var string $cacheName
+     * @var string $cacheName A key identifying the values to be cached
      */
     public $cacheName = 'settings';
     /**
