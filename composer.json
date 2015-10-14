@@ -1,0 +1,36 @@
+{
+    "name": "rkit/settings-yii2",
+    "description": "Settings for Yii2",
+    "keywords": ["yii2", "extension", "settings", "options"],
+    "homepage": "https://github.com/rkit/settings-yii2",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Igor Romanov",
+            "email": "rkit.ru@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/rkit/settings-yii2/issues?state=open",
+        "source": "https://github.com/rkit/settings-yii2"
+    },
+    "require": {
+        "yiisoft/yii2": "^2.0"
+    },
+    "scripts": {
+        "test-prepare": [
+            "php tests/yii migrate --migrationPath=src/migrations/ --interactive=0"
+        ],
+        "test": "phpunit --coverage-html=tests/tmp/coverage.html --colors=always"
+    },
+    "autoload": {
+        "psr-4": {
+            "rkit\\settings\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "phpunit/dbunit": "^1.4"
+    }
+}

@@ -1,0 +1,20 @@
+# hidden system files
+.DS_Store
+Thumbs.db
+
+# jetbrains
+.idea
+
+# composer
+/vendor
+
+# npm
+node_modules
+npm-debug.log
+
+# bower
+bower_components
+
+# folders for tests
+/tests/tmp
+/tests/runtime
