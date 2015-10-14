@@ -26,6 +26,10 @@ class Settings extends \yii\base\Component
      */
     public $cacheName = 'settings';
     /**
+     * @var string $cache Cache component name
+     */
+    public $cache = 'cache';
+    /**
      * @var array $data
      */
     private $data = [];
@@ -44,7 +48,7 @@ class Settings extends \yii\base\Component
     {
         parent::init();
 
-        $data = Yii::$app->cache->get($this->cacheName);
+        $data = Yii::$app->{$this->cache}->get($this->cacheName);
 
         if ($data) {
             $this->data = unserialize($data);
@@ -129,8 +133,10 @@ class Settings extends \yii\base\Component
     {
         $db = Yii::$app->db->createCommand();
         $db->truncateTable($this->tableName)->execute();
-        $db->batchInsert($this->tableName, ['key', 'value'], $this->prepareDataForInsert($data))->execute();
 
+        if (is_array($data) && count($data)) {
+            $db->batchInsert($this->tableName, ['key', 'value'], $this->prepareDataForInsert($data))->execute();
+        }
         $this->updateData($data);
     }
 
@@ -159,8 +165,11 @@ class Settings extends \yii\base\Component
     {
         $this->data = $data;
 
-        $cache = Yii::$app->cache;
+        $cache = Yii::$app->{$this->cache};
         $cache->delete($this->cacheName);
-        $cache->set($this->cacheName, serialize($this->data));
+
+        if (is_array($this->data) && count($this->data)) {
+            $cache->set($this->cacheName, serialize($this->data));
+        }
     }
 }
