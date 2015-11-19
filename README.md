@@ -55,7 +55,7 @@ Add the following in your config, in section `components`
    Yii::$app->settings->all();
    ```
 
-### Editing in the control panel
+### Example for editing in the control panel
 
 1. Controller
    ```php
