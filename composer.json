@@ -4,7 +4,7 @@
     "keywords": ["yii2", "extension", "settings", "options"],
     "homepage": "https://github.com/rkit/settings-yii2",
     "type": "yii2-extension",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Igor Romanov",
