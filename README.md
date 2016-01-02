@@ -24,9 +24,9 @@ Add the following in your config, in section `components`
 ```php
 'settings' => [
       'class' => 'rkit\settings\Settings',
-      //'cache' => '…', // cache component name
-      //'tableName' => '…' // table name
-      //'cacheName' => '…' // a key identifying the values to be cached
+      'cache' => 'cache', // cache component name
+      'tableName' => 'settings' // table name
+      'cacheName' => 'settings' // a key identifying the values to be cached
  ]
 ```
 
@@ -34,7 +34,7 @@ Add the following in your config, in section `components`
 
 ### Basic usage
 
-1. Load
+1. Populates the settings
    ```php
    Yii::$app->settings->load(['key' => 'value']);
    ```
