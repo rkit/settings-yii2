@@ -11,3 +11,21 @@
    ```
    composer test
    ```
+
+3. Run tests with coverage
+
+   ```
+   composer test-coverage
+   ```
+
+   or
+
+   ```
+   composer test-coverage-html
+   ```
+
+4. Show coverage dashboard
+
+   ```
+   composer test-coverage-html-open
+   ```

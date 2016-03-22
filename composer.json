@@ -22,7 +22,10 @@
         "test-prepare": [
             "php tests/yii migrate --migrationPath=src/migrations/ --interactive=0"
         ],
-        "test": "phpunit --coverage-html=tests/tmp/coverage.html --colors=always"
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --coverage-text --colors=always",
+        "test-coverage-html": "phpunit --coverage-html=tests/tmp/coverage.html --colors=always",
+        "test-coverage-html-open": "open tests/tmp/coverage.html/index.html"
     },
     "autoload": {
         "psr-4": {
