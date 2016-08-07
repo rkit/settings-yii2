@@ -88,7 +88,7 @@ class Settings extends \yii\base\Component
      */
     public function set($key, $value)
     {
-        if (ArrayHelper::getValue($this->data, $key, null)) {
+        if (ArrayHelper::getValue($this->data, $key) !== null) {
             $this->update($key, $value);
         } else {
             $this->add($key, $value);

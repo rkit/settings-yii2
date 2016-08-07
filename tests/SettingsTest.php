@@ -15,8 +15,8 @@ use yii\helpers\ArrayHelper;
 class SettingsTest extends \PHPUnit_Framework_TestCase
 {
     public $data = [
-        'email' => 'testEmail',
-        'name' => 'testName',
+        'email' => 'test_email',
+        'name' => 'test_name',
         'number' => 3000,
     ];
 
@@ -44,43 +44,32 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
 
     public function testLoad()
     {
-        Yii::$app->settings->load(['testKey' => 'testValue']);
+        Yii::$app->settings->load(['test_key' => 'test_value']);
         $this->assertCount(1, Yii::$app->settings->all());
-        $this->assertEquals('testValue', Yii::$app->settings->get('testKey'));
+        $this->assertEquals('test_value', Yii::$app->settings->get('test_key'));
     }
 
-    public function testSet()
+    public function testSetAndGet()
     {
-        Yii::$app->settings->set('name', 'testName2');
-        $this->assertEquals('testName2', Yii::$app->settings->get('name'));
+        Yii::$app->settings->set('test_name', 'test_value');
+        $this->assertEquals('test_value', Yii::$app->settings->get('test_name'));
 
-        Yii::$app->settings->name = 'testName3';
-        $this->assertEquals('testName3', Yii::$app->settings->get('name'));
+        Yii::$app->settings->test_name = 'test_value';
+        $this->assertEquals('test_value', Yii::$app->settings->test_name);
+
+        Yii::$app->settings->set('test_name', '');
+        $this->assertEquals('', Yii::$app->settings->get('test_name'));
+
+        Yii::$app->settings->test_name = '';
+        $this->assertEquals('', Yii::$app->settings->test_name);
+
+        $this->assertNull(Yii::$app->settings->non_exist);
+        $this->assertNull(Yii::$app->settings->get('non_exist'));
     }
 
-    public function testGet()
-    {
-        $this->assertEquals('testName', Yii::$app->settings->get('name'));
-        $this->assertNull(Yii::$app->settings->get('name_wrong'));
-
-        $this->assertEquals('testName', Yii::$app->settings->name);
-        $this->assertNull(Yii::$app->settings->name_wrong);
-    }
-
-    public function testEmpty()
+    public function testClear()
     {
         Yii::$app->settings->load([]);
         $this->assertCount(0, Yii::$app->settings->all());
-    }
-
-    public function testAdd()
-    {
-        Yii::$app->settings->set('addKey', 'addValue');
-        $this->assertEquals('addValue', Yii::$app->settings->get('addKey'));
-
-        Yii::$app->settings->addKey2 = 'addValue2';
-        $this->assertEquals('addValue2', Yii::$app->settings->get('addKey2'));
-
-        $this->assertCount(5, Yii::$app->settings->all());
     }
 }
