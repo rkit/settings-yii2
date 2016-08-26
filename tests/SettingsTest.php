@@ -63,6 +63,9 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
         Yii::$app->settings->test_name = '';
         $this->assertEquals('', Yii::$app->settings->test_name);
 
+        Yii::$app->settings->test_name = null;
+        $this->assertEquals(null, Yii::$app->settings->test_name);
+
         $this->assertNull(Yii::$app->settings->non_exist);
         $this->assertNull(Yii::$app->settings->get('non_exist'));
     }
