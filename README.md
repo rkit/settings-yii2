@@ -19,13 +19,13 @@
 
 ## Documentation
 
-[Guide](/guide)
+- [Guide](/guide)
 
 ## Development
 
 ### Tests
 
-[See docs](/tests/#tests)
+- [See docs](/tests/#tests)
 
 ### Coding Standard
 

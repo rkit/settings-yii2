@@ -1,31 +1,32 @@
 # Tests
 
-1. Create `settings_yii2_tests` database and run
+## Preparation
 
-   ```
-   composer test-prepare
-   ```
+Create `settings_yii2_tests` database and run
 
-2. Run tests
+```
+composer test-prepare
+```
 
-   ```
-   composer test
-   ```
+## Commands
 
-3. Run tests with coverage
+- Run tests
+  ```
+  composer test
+  ```
 
-   ```
-   composer test-coverage
-   ```
+- Run tests with coverage
+  ```
+  composer test-coverage
+  ```
 
    or
 
-   ```
-   composer test-coverage-html
-   ```
+  ```
+  composer test-coverage-html
+  ```
 
-4. Show coverage dashboard
-
-   ```
-   composer test-coverage-html-open
-   ```
+- Show coverage dashboard
+  ```
+  composer test-coverage-html-open
+  ```
