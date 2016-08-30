@@ -98,3 +98,10 @@ Add the following in your config, in section `components`
    <?= $form->field($model, 'emailPrefix') ?>
    …
    ```
+
+## Development
+
+### Coding Standard
+
+- PHP Code Sniffer — [phpcs.xml](./phpcs.xml)
+- PHP Mess Detector — [ruleset.xml](./ruleset.xml)
