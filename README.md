@@ -101,6 +101,10 @@ Add the following in your config, in section `components`
 
 ## Development
 
+### Tests
+
+[See docs](/tests/#tests)
+
 ### Coding Standard
 
 - PHP Code Sniffer — [phpcs.xml](./phpcs.xml)
