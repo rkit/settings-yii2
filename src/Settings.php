@@ -52,11 +52,11 @@ class Settings extends \yii\base\Component
 
         if ($data) {
             $this->data = unserialize($data);
-        } else {
-            $data = (new Query())->select('*')->from($this->tableName)->all();
-            $data = ArrayHelper::map($data, 'key', 'value');
-            $this->updateData($data);
+            return;
         }
+        $data = (new Query())->select('*')->from($this->tableName)->all();
+        $data = ArrayHelper::map($data, 'key', 'value');
+        $this->updateData($data);
     }
 
     /**
@@ -85,6 +85,7 @@ class Settings extends \yii\base\Component
      *
      * @param string $key
      * @param string $value
+     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function set($key, $value)
     {
