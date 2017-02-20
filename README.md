@@ -30,4 +30,3 @@
 ### Coding Standard
 
 - PHP Code Sniffer — [phpcs.xml](./phpcs.xml)
-- PHP Mess Detector — [phpmd.xml](./phpmd.xml)
