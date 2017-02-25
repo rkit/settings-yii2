@@ -2,6 +2,6 @@
 Thumbs.db
 *.log
 
-/vendor
-/tests/tmp
-/tests/runtime
+vendor/
+tests/tmp/
+tests/runtime/
